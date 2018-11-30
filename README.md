@@ -1,6 +1,6 @@
 # UPE Coding Challenge
 
-#### Run: `python challenge.py`
+#### Run: `python Challenge.py`
 
 _PS. Uses Python 3_
 
