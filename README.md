@@ -1,3 +1,9 @@
-## UPE Coding Challenge
+# UPE Coding Challenge
 
-`python 
+#### Run: `python challenge.py`
+
+_PS. Uses Python 3_
+
+**Suyash Saxena**
+
+**404735401**
