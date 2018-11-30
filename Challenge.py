@@ -31,6 +31,7 @@ def compute_move(src, d):
 def request_move(direction, token):
     r = requests.post(ROOT + '/game?token=' + token, data={"action":direction})
     res = r.json()["result"]
+    
     return res
 
 def search(token):
@@ -45,7 +46,7 @@ def search(token):
     
     visited.add(curr)
     
-    directions = ["UP", "DOWN", "LEFT", "RIGHT"]
+    directions = ["UP", "RIGHT", "DOWN", "LEFT"]
     direction_back = {
         "UP": "DOWN",
         "DOWN": "UP",
@@ -81,7 +82,7 @@ def search(token):
                 return True;
             
             else:
-                print ("TIMED OUT...")
+                print ("Err... Timed out")
                 return False
                 
         if not made_a_move:
@@ -100,9 +101,10 @@ def play(game, token):
     for i in range(levels):
         res = search(token)
         if not res:
-            print ("Gracefully accepting failure");
+            print ("Gracefully accepting failure")
             return;
         print ("Completed Level", i + 1)
+    print ("Challenge Complete ✅")
 
 if __name__ == "__main__":
     ROOT = 'http://ec2-34-216-8-43.us-west-2.compute.amazonaws.com'
