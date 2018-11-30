@@ -98,6 +98,11 @@ def search(token):
 
 def play(game, token):
     levels = game["total_levels"]
+    
+    if not levels:
+        print ("Game probably completed, TOKEN still not invalidated")
+        return
+    
     for i in range(levels):
         res = search(token)
         if not res:
